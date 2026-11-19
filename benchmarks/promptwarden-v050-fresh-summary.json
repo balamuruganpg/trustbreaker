@@ -1,0 +1,71 @@
+{
+  "benchmark": "PromptWarden 0.5.0 vs its own eval corpus, injection rows (fresh adaptive run)",
+  "corpus": "promptwarden/evals/corpus.jsonl (81 injection rows)",
+  "scanner": "promptwarden 0.5.0",
+  "seed": 13,
+  "budget_per_text": 40,
+  "originals": 81,
+  "originals_flagged": 78,
+  "applicable_variants": 3120,
+  "bypasses": 1480,
+  "bypass_rate": 0.47435897435897434,
+  "robustness_score": 0.5256410256410257,
+  "per_operator": {
+    "leet": {
+      "applicable": 812,
+      "bypasses": 535,
+      "bypass_rate": 0.6588669950738916
+    },
+    "space_out": {
+      "applicable": 815,
+      "bypasses": 535,
+      "bypass_rate": 0.656441717791411
+    },
+    "zero_width": {
+      "applicable": 718,
+      "bypasses": 248,
+      "bypass_rate": 0.34540389972144847
+    },
+    "homoglyph": {
+      "applicable": 727,
+      "bypasses": 262,
+      "bypass_rate": 0.3603851444291609
+    },
+    "case_mix": {
+      "applicable": 731,
+      "bypasses": 301,
+      "bypass_rate": 0.4117647058823529
+    },
+    "punct_split": {
+      "applicable": 743,
+      "bypasses": 328,
+      "bypass_rate": 0.4414535666218035
+    },
+    "char_reverse": {
+      "applicable": 734,
+      "bypasses": 291,
+      "bypass_rate": 0.39645776566757496
+    },
+    "word_reverse": {
+      "applicable": 736,
+      "bypasses": 291,
+      "bypass_rate": 0.3953804347826087
+    },
+    "b64_wrap": {
+      "applicable": 846,
+      "bypasses": 629,
+      "bypass_rate": 0.7434988179669031
+    },
+    "diacritic": {
+      "applicable": 745,
+      "bypasses": 335,
+      "bypass_rate": 0.44966442953020136
+    },
+    "synonym": {
+      "applicable": 721,
+      "bypasses": 286,
+      "bypass_rate": 0.39667128987517336
+    }
+  },
+  "note": "Aggregates only. Per-variant payloads are never written: a fresh adaptive run still produces working bypass text, and this file records counts and rates. Reproduce with benchmarks/run_promptwarden_v050_fresh.py; two runs with the same seed write byte-identical aggregates."
+}

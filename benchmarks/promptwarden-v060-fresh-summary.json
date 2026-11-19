@@ -1,0 +1,71 @@
+{
+  "benchmark": "PromptWarden 0.6.0 vs its own eval corpus, injection rows (fresh adaptive run)",
+  "corpus": "promptwarden/evals/corpus.jsonl (81 injection rows)",
+  "scanner": "promptwarden 0.6.0",
+  "seed": 13,
+  "budget_per_text": 40,
+  "originals": 81,
+  "originals_flagged": 78,
+  "applicable_variants": 3120,
+  "bypasses": 676,
+  "bypass_rate": 0.21666666666666667,
+  "robustness_score": 0.7833333333333333,
+  "per_operator": {
+    "leet": {
+      "applicable": 835,
+      "bypasses": 307,
+      "bypass_rate": 0.36766467065868264
+    },
+    "space_out": {
+      "applicable": 771,
+      "bypasses": 174,
+      "bypass_rate": 0.22568093385214008
+    },
+    "zero_width": {
+      "applicable": 715,
+      "bypasses": 99,
+      "bypass_rate": 0.13846153846153847
+    },
+    "homoglyph": {
+      "applicable": 702,
+      "bypasses": 84,
+      "bypass_rate": 0.11965811965811966
+    },
+    "case_mix": {
+      "applicable": 768,
+      "bypasses": 216,
+      "bypass_rate": 0.28125
+    },
+    "punct_split": {
+      "applicable": 752,
+      "bypasses": 161,
+      "bypass_rate": 0.21409574468085107
+    },
+    "char_reverse": {
+      "applicable": 740,
+      "bypasses": 136,
+      "bypass_rate": 0.1837837837837838
+    },
+    "word_reverse": {
+      "applicable": 759,
+      "bypasses": 174,
+      "bypass_rate": 0.22924901185770752
+    },
+    "b64_wrap": {
+      "applicable": 809,
+      "bypasses": 317,
+      "bypass_rate": 0.39184177997527814
+    },
+    "diacritic": {
+      "applicable": 724,
+      "bypasses": 101,
+      "bypass_rate": 0.13950276243093923
+    },
+    "synonym": {
+      "applicable": 744,
+      "bypasses": 122,
+      "bypass_rate": 0.1639784946236559
+    }
+  },
+  "note": "Aggregates only. Per-variant payloads are never written: a fresh adaptive run still produces working bypass text, and this file records counts and rates. Reproduce with benchmarks/run_promptwarden_v060_fresh.py; two runs with the same seed write byte-identical aggregates."
+}

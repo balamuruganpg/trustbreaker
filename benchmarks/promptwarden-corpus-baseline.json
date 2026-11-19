@@ -1,0 +1,8 @@
+{
+  "promptwarden_version": "0.3.0",
+  "corpus_rows": 181,
+  "originals_total": 81,
+  "originals_flagged": 74,
+  "originals_missed": 7,
+  "original_detection_rate": 0.9135802469135802
+}

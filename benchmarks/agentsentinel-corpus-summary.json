@@ -1,0 +1,11 @@
+{
+  "benchmark": "AgentSentinel original-trace detection on its eval corpus",
+  "corpus": "agentsentinel/evals/corpus.jsonl",
+  "scanner": "agentsentinel 0.3.0",
+  "originals": 120,
+  "originals_flagged": 38,
+  "malicious_originals": 40,
+  "malicious_originals_flagged": 33,
+  "benign_originals": 80,
+  "benign_originals_flagged": 5
+}
