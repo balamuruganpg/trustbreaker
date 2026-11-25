@@ -1,0 +1,71 @@
+{
+  "benchmark": "PromptWarden 0.4.0 vs its own eval corpus, injection rows (fresh adaptive run)",
+  "corpus": "promptwarden/evals/corpus.jsonl (81 injection rows)",
+  "scanner": "promptwarden 0.4.0",
+  "seed": 13,
+  "budget_per_text": 40,
+  "originals": 81,
+  "originals_flagged": 75,
+  "applicable_variants": 3000,
+  "bypasses": 2259,
+  "bypass_rate": 0.753,
+  "robustness_score": 0.247,
+  "per_operator": {
+    "leet": {
+      "applicable": 738,
+      "bypasses": 625,
+      "bypass_rate": 0.8468834688346883
+    },
+    "space_out": {
+      "applicable": 780,
+      "bypasses": 688,
+      "bypass_rate": 0.882051282051282
+    },
+    "zero_width": {
+      "applicable": 681,
+      "bypasses": 409,
+      "bypass_rate": 0.6005873715124816
+    },
+    "homoglyph": {
+      "applicable": 699,
+      "bypasses": 449,
+      "bypass_rate": 0.642346208869814
+    },
+    "case_mix": {
+      "applicable": 719,
+      "bypasses": 489,
+      "bypass_rate": 0.6801112656467315
+    },
+    "punct_split": {
+      "applicable": 685,
+      "bypasses": 472,
+      "bypass_rate": 0.689051094890511
+    },
+    "char_reverse": {
+      "applicable": 760,
+      "bypasses": 675,
+      "bypass_rate": 0.8881578947368421
+    },
+    "word_reverse": {
+      "applicable": 768,
+      "bypasses": 709,
+      "bypass_rate": 0.9231770833333334
+    },
+    "b64_wrap": {
+      "applicable": 742,
+      "bypasses": 640,
+      "bypass_rate": 0.862533692722372
+    },
+    "diacritic": {
+      "applicable": 708,
+      "bypasses": 490,
+      "bypass_rate": 0.692090395480226
+    },
+    "synonym": {
+      "applicable": 690,
+      "bypasses": 472,
+      "bypass_rate": 0.6840579710144927
+    }
+  },
+  "note": "Aggregates only. Per-variant payloads are never written: a fresh adaptive run still produces working bypass text, and this file records counts and rates. Reproduce with benchmarks/run_promptwarden_v040_fresh.py; two runs with the same seed write byte-identical aggregates."
+}

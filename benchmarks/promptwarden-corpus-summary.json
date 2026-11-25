@@ -1,0 +1,71 @@
+{
+  "benchmark": "PromptWarden 0.3.0 vs its own eval corpus, injection rows",
+  "corpus": "promptwarden/evals/corpus.jsonl (81 injection rows)",
+  "scanner": "promptwarden 0.3.0",
+  "seed": 13,
+  "budget_per_text": 40,
+  "originals": 81,
+  "originals_flagged": 74,
+  "applicable_variants": 2960,
+  "bypasses": 2613,
+  "bypass_rate": 0.8827702702702702,
+  "robustness_score": 0.11722972972972978,
+  "per_operator": {
+    "leet": {
+      "applicable": 718,
+      "bypasses": 707,
+      "bypass_rate": 0.9846796657381616
+    },
+    "space_out": {
+      "applicable": 721,
+      "bypasses": 689,
+      "bypass_rate": 0.955617198335645
+    },
+    "zero_width": {
+      "applicable": 681,
+      "bypasses": 513,
+      "bypass_rate": 0.7533039647577092
+    },
+    "homoglyph": {
+      "applicable": 706,
+      "bypasses": 561,
+      "bypass_rate": 0.7946175637393768
+    },
+    "case_mix": {
+      "applicable": 717,
+      "bypasses": 586,
+      "bypass_rate": 0.8172942817294282
+    },
+    "punct_split": {
+      "applicable": 685,
+      "bypasses": 653,
+      "bypass_rate": 0.9532846715328467
+    },
+    "char_reverse": {
+      "applicable": 710,
+      "bypasses": 658,
+      "bypass_rate": 0.9267605633802817
+    },
+    "word_reverse": {
+      "applicable": 710,
+      "bypasses": 665,
+      "bypass_rate": 0.9366197183098591
+    },
+    "b64_wrap": {
+      "applicable": 745,
+      "bypasses": 670,
+      "bypass_rate": 0.8993288590604027
+    },
+    "diacritic": {
+      "applicable": 717,
+      "bypasses": 701,
+      "bypass_rate": 0.9776847977684798
+    },
+    "synonym": {
+      "applicable": 700,
+      "bypasses": 574,
+      "bypass_rate": 0.82
+    }
+  },
+  "note": "Aggregates only. The full per-variant report is not published: it records thousands of working bypass payloads. Reproduce locally with the trustbreaker CLI against the promptwarden corpus."
+}

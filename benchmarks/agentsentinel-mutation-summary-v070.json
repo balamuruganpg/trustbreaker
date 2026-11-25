@@ -1,0 +1,44 @@
+{
+  "benchmark": "AgentSentinel trace-mutation bypass on its eval corpus",
+  "corpus": "agentsentinel/evals/corpus.jsonl",
+  "scanner": "agentsentinel 0.7.0",
+  "protocol": "budget 40 variants per trace, seed 13, UCB1 over trace pipelines",
+  "originals": 120,
+  "originals_flagged": 45,
+  "applicable_variants": 1745,
+  "bypasses": 67,
+  "bypass_rate": 0.038395415472779366,
+  "robustness_score": 0.9616045845272206,
+  "per_operator": {
+    "noise_insert": {
+      "applicable": 921,
+      "bypasses": 12,
+      "bypass_rate": 0.013029315960912053
+    },
+    "tool_rename": {
+      "applicable": 635,
+      "bypasses": 20,
+      "bypass_rate": 0.031496062992125984
+    },
+    "arg_split": {
+      "applicable": 568,
+      "bypasses": 39,
+      "bypass_rate": 0.06866197183098592
+    },
+    "reorder_independent": {
+      "applicable": 675,
+      "bypasses": 52,
+      "bypass_rate": 0.07703703703703704
+    },
+    "result_pad": {
+      "applicable": 768,
+      "bypasses": 22,
+      "bypass_rate": 0.028645833333333332
+    },
+    "path_obscure": {
+      "applicable": 625,
+      "bypasses": 22,
+      "bypass_rate": 0.0352
+    }
+  }
+}

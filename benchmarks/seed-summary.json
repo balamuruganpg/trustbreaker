@@ -1,0 +1,28 @@
+{
+  "source": "README.md section Measured results (v0.1.0)",
+  "corpus": "attacks/seed.jsonl",
+  "corpus_note": "12 synthetic attacks written for this project — not any scanner's own benchmark corpus",
+  "budget_per_text": 40,
+  "seed": 13,
+  "deterministic": "two identical runs produce identical reports",
+  "scanners": [
+    {
+      "scanner": "KeywordScanner (naive substring)",
+      "originals_flagged": 12,
+      "originals": 12,
+      "applicable_variants": 480,
+      "bypasses": 472,
+      "bypass_rate": 0.9833333333333333,
+      "robustness_score": 0.01666666666666672
+    },
+    {
+      "scanner": "PromptWarden 0.3.0",
+      "originals_flagged": 6,
+      "originals": 12,
+      "applicable_variants": 240,
+      "bypasses": 208,
+      "bypass_rate": 0.8666666666666667,
+      "robustness_score": 0.1333333333333333
+    }
+  ]
+}

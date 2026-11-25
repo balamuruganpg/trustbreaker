@@ -1,0 +1,71 @@
+{
+  "benchmark": "PromptWarden 0.7.1 vs its own eval corpus, injection rows (fresh adaptive run)",
+  "corpus": "promptwarden/evals/corpus.jsonl (81 injection rows)",
+  "scanner": "promptwarden 0.7.1",
+  "seed": 13,
+  "budget_per_text": 40,
+  "originals": 81,
+  "originals_flagged": 78,
+  "applicable_variants": 3120,
+  "bypasses": 727,
+  "bypass_rate": 0.23301282051282052,
+  "robustness_score": 0.7669871794871794,
+  "per_operator": {
+    "leet": {
+      "applicable": 830,
+      "bypasses": 312,
+      "bypass_rate": 0.3759036144578313
+    },
+    "space_out": {
+      "applicable": 748,
+      "bypasses": 159,
+      "bypass_rate": 0.21256684491978609
+    },
+    "zero_width": {
+      "applicable": 751,
+      "bypasses": 184,
+      "bypass_rate": 0.24500665778961384
+    },
+    "homoglyph": {
+      "applicable": 699,
+      "bypasses": 90,
+      "bypass_rate": 0.12875536480686695
+    },
+    "case_mix": {
+      "applicable": 764,
+      "bypasses": 220,
+      "bypass_rate": 0.2879581151832461
+    },
+    "punct_split": {
+      "applicable": 743,
+      "bypasses": 157,
+      "bypass_rate": 0.21130551816958276
+    },
+    "char_reverse": {
+      "applicable": 746,
+      "bypasses": 151,
+      "bypass_rate": 0.20241286863270777
+    },
+    "word_reverse": {
+      "applicable": 780,
+      "bypasses": 237,
+      "bypass_rate": 0.3038461538461538
+    },
+    "b64_wrap": {
+      "applicable": 801,
+      "bypasses": 297,
+      "bypass_rate": 0.3707865168539326
+    },
+    "diacritic": {
+      "applicable": 726,
+      "bypasses": 115,
+      "bypass_rate": 0.1584022038567493
+    },
+    "synonym": {
+      "applicable": 741,
+      "bypasses": 127,
+      "bypass_rate": 0.17139001349527666
+    }
+  },
+  "note": "Aggregates only. Per-variant payloads are never written: a fresh adaptive run still produces working bypass text, and this file records counts and rates. Reproduce with benchmarks/run_promptwarden_v071_fresh.py; two runs with the same seed write byte-identical aggregates."
+}
