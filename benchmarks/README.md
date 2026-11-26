@@ -412,6 +412,34 @@ python benchmarks/run_promptwarden_v080_fresh.py
 
 Two runs with this seed write byte-identical aggregates.
 
+## Fresh adaptive run (PromptWarden v0.9.0)
+
+`run_promptwarden_v090_fresh.py` repeats that protocol on the same 81 injection rows (budget 40, seed 13, UCB1 over operator pipelines) with the scanner bound to the sibling checkout `../promptwarden` at v0.9.0. v0.9.0 flags 78 of the 81 originals, the same count as v0.8.1. The bundled model was not refit. PromptWarden reports the same corpus operating point (F1 0.9035, FPR 0.0667). Run twice; aggregates byte-identical.
+
+| PromptWarden 0.9.0 | Applicable variants | Bypasses | Bypass rate | Robustness |
+| --- | ---: | ---: | ---: | ---: |
+| Fresh adaptive mutations of the 78 caught attacks | 3,120 | 570 | **18.27%** | **81.73%** |
+
+Per-operator rates (a variant counts toward every operator in its pipeline, so families overlap):
+
+| Operator | Applicable | Bypasses | Bypass rate |
+| --- | ---: | ---: | ---: | ---:|
+| `b64_wrap` | 789 | 261 | 33.08% |
+| `leet` | 814 | 261 | 32.06% |
+| `case_mix` | 768 | 191 | 24.87% |
+| `punct_split` | 770 | 144 | 18.70% |
+| `space_out` | 755 | 131 | 17.35% |
+| `word_reverse` | 731 | 112 | 15.32% |
+| `synonym` | 746 | 111 | 14.88% |
+| `char_reverse` | 749 | 109 | 14.55% |
+| `zero_width` | 735 | 101 | 13.74% |
+| `diacritic` | 735 | 100 | 13.61% |
+| `homoglyph` | 711 | 67 | 9.42% |
+
+Fresh adaptive bypass is **88.28% → 75.30% → 47.44% → 21.67% → 19.55% → 23.30% → 23.04% → 18.33% → 18.27%** from v0.3.0 to v0.4.0 to v0.5.0 to v0.6.0 to v0.7.0 to v0.7.1 to v0.8.0 to v0.8.1 to v0.9.0 (robustness 11.72% → 24.70% → 52.56% → 78.33% → 80.45% → 76.70% → 76.96% → 81.67% → 81.73%). The denominator stays put: 78 flagged originals and 3,120 applicable variants, the same as the v0.5.0 through v0.8.1 fresh runs. Bypasses move from 572 to 570.
+
+The arc point is flat, and that is the honest result. v0.9.0's fixed-replay gains (10/78 depth-2 case-mix carriers recovered, 0/78 depth-2 leet) do not move the adaptive draw: the bandit re-concentrates on the still-open mass. `b64_wrap` (261/789, 33.08%) and `leet` (261/814, 32.06%) together account for 522 of the 570 bypasses; `case_mix` is 191/768 (24.87%). The carrier repair closes a slice of the fixed family; the adaptive attacker spends its budget elsewhere. The open mass is unchanged in kind: leet applied to the base64 carrier alphabet itself destroys bits the repair cannot identify ("pal" and "pay" map to identical symbols), so the leet-after-b64_wrap shape that dominated v0.8.1 still dominates here.
+
 ## Fresh adaptive run (PromptWarden v0.8.1)
 
 `run_promptwarden_v081_fresh.py` repeats that protocol on the same 81 injection rows (budget 40, seed 13, UCB1 over operator pipelines) with the scanner bound to the sibling checkout `../promptwarden` at v0.8.1. The script inserts that checkout's `src` ahead of site-packages, so an older installed PromptWarden cannot satisfy the import. v0.8.1 flags 78 of the 81 originals, the same count as v0.8.0. The bundled model was not refit. PromptWarden reports the same corpus operating point as v0.8.0 (F1 0.9035, FPR 0.0667).

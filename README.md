@@ -262,10 +262,17 @@ word-order restoration while format characters are still boundaries.
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Mutations of the 78 caught attacks | 78/81 | 3,120 | 572 | 18.33% | 81.67% |
 
-Fresh adaptive bypass is **88.28% → 75.30% → 47.44% → 21.67% → 19.55% → 23.30% → 23.04% → 18.33%** from
-v0.3.0 to v0.4.0 to v0.5.0 to v0.6.0 to v0.7.0 to v0.7.1 to v0.8.0 to v0.8.1 (robustness 11.72% → 24.70% →
-52.56% → 78.33% → 80.45% → 76.70% → 76.96% → 81.67%). The denominator stays put: 78 flagged originals and
-3,120 applicable variants. Bypasses move from 719 to 572.
+Fresh adaptive bypass is **88.28% → 75.30% → 47.44% → 21.67% → 19.55% → 23.30% → 23.04% → 18.33% → 18.27%** from
+v0.3.0 to v0.4.0 to v0.5.0 to v0.6.0 to v0.7.0 to v0.7.1 to v0.8.0 to v0.8.1 to v0.9.0 (robustness 11.72% → 24.70% →
+52.56% → 78.33% → 80.45% → 76.70% → 76.96% → 81.67% → 81.73%). The denominator stays put: 78 flagged originals and
+3,120 applicable variants. Bypasses move from 572 to 570.
+
+Same protocol with the scanner bound to the sibling PromptWarden v0.9.0 checkout (bounded base64 carrier repair).
+The arc point is flat: v0.9.0's fixed-replay gains (10/78 depth-2 case-mix carriers recovered, 0/78 depth-2 leet)
+do not move the adaptive draw, because the bandit re-concentrates on the still-open mass — `b64_wrap` 261/789
+(33.08%) and `leet` 261/814 (32.06%) between them account for 522 of the 570 bypasses, and `case_mix` is 191/768
+(24.87%). The carrier repair closes a slice of the fixed family; the adaptive attacker simply spends its budget
+elsewhere. Run twice, byte-identical aggregates.
 
 `word_reverse` bypassed the identical 237 variants on the v0.7.1 run (780 applicable, 30.38%) and the
 v0.8.0 run (782 applicable, 30.31%). v0.8.1 restores word order while a format character is still a word
